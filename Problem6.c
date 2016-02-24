@@ -2,7 +2,7 @@
 
 /**
 * Author: Austin Derrow-Pinion
-* Purpose: Solve Problem 5 on Project Euler
+* Purpose: Solve Problem 6 on Project Euler
 * Language: C
 *
 * Finds the difference between the sum of the squares of

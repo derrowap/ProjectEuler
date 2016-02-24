@@ -4,7 +4,7 @@
 
 /**
 * Author: Austin Derrow-Pinion
-* Purpose: Solve Problem 4 on ProjectEuler
+* Purpose: Solve Problem 4 on Project Euler
 * Language: C
 *
 * Brute force method would take way too long for a computer to find 

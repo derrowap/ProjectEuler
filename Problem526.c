@@ -1,18 +1,28 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/**
+* Author: Austin Derrow-Pinion
+* Purpose: Solve Problem 526 on Project Euler
+* Language: C
+*
+*
+* Function f(n) is the largest prime factor of n.
+* Function g(n) is the sum of largest prime factors of 
+* 	each nine consecutive numbers starting with n.
+* Function h(n) is maximum value of g(k) for 2 <= k <= n.
+* 
+* This problem is set up to find h(10^(16)).
+*/
+
 bool prime(long long p);
 long long largestPrime(long long num);
 long long sumOfLargestPrimes(long long num);
 
-
-/**
-*
-**/
 bool prime(long long p) {
 	long long i;
-	for(i = 2; i <= (p / 2); i++) {
-		if(p % i == 0) return false;
+	for (i = 2; i <= (p / 2); i++) {
+		if (p % i == 0) return false;
 	}
 	return true;
 }
@@ -23,12 +33,12 @@ bool prime(long long p) {
 **/
 long long largestPrime(long long num) {
 	long long i;
-	loop:
-	for(i = 2; i <= num;i++) {
-		if(prime(i)) {
-			if(i == num)
+loop:
+	for (i = 2; i <= num; i++) {
+		if (prime(i)) {
+			if (i == num)
 				return i;
-			if(num % i == 0) {
+			if (num % i == 0) {
 				num /= i;
 				goto loop;
 			}
@@ -46,20 +56,17 @@ long long largestPrime(long long num) {
 long long sumOfLargestPrimes(long long num) {
 	int i;
 	long long sum = 0;
-	for(i = 0; i < 9; i++) {
+	for (i = 0; i < 9; i++) {
 		sum += largestPrime(num + (long long) i);
 	}
 	return sum;
 }
 
-/**
-*
-**/
 long long maxSumLargestPrime(long long num) {
 	long long i, temp, max = 0;
-	for(i = 2; i <= num; i++) {
+	for (i = 2; i <= num; i++) {
 		temp = sumOfLargestPrimes(i);
-		if(temp > max)
+		if (temp > max)
 			max = temp;
 	}
 	return max;

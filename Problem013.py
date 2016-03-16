@@ -10,9 +10,10 @@ this number.
 from array import array
 
 def main():
-	print "The sum of one-hundred 50-digit numbers:", sum(10)
+	print "The sum of one-hundred 50-digit numbers:", sum()
 
-def sum(digits):
+""" Returns the sum of one-hundred 50-digit numbers """
+def sum():
 	numbers = [
 		37107287533902102798797998220837590246510135740250,
 		46376937677490009712648124896970078050417018260538,
